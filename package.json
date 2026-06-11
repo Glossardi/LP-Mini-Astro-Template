@@ -4,6 +4,7 @@
   "description": "Agent-gestütztes Landing Page Template für Schumm & Rösch — 18 Sections, Markdown-only Workflow",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -15,5 +16,8 @@
     "@iconify-json/lucide": "^1.2.97",
     "astro": "^6.4.5",
     "astro-icon": "^1.1.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp"]
   }
 }
