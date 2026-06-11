@@ -1,16 +1,13 @@
 // robots.txt.ts — Generates /robots.txt at build time
-// Astro API endpoint: https://docs.astro.build/en/guides/endpoints/
 import type { APIRoute } from "astro";
-import site from "../data/site";
+import brand from "@data/brand";
 
 export const GET: APIRoute = () => {
   const content = [
     "User-agent: *",
     "Allow: /",
-    "Disallow: /impressum",
-    "Disallow: /datenschutz",
     "",
-    `Sitemap: ${site.url}/sitemap-index.xml`,
+    `Sitemap: ${brand.landingUrl}/sitemap-index.xml`,
   ].join("\n");
 
   return new Response(content, {

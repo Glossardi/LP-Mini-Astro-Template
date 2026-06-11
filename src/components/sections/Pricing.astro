@@ -1,0 +1,27 @@
+---
+import type { LandingPageData } from "@lib/types";
+import PricingCard from "@components/sections/PricingCard.astro";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.pricing_amount || page.problem_intro) {
+  return null;
+}
+---
+
+<section class="section section--compact pricing" id="pricing" aria-labelledby="pricing-heading">
+  <div class="container pricing__layout">
+    <PricingCard page={page} />
+  </div>
+</section>
+
+<style>
+  .pricing__layout {
+    display: flex;
+    justify-content: center;
+  }
+</style>

@@ -1,0 +1,138 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<section class="hero" id="hero" aria-labelledby="hero-heading">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      {page.hero_eyebrow && <p class="hero__eyebrow">{page.hero_eyebrow}</p>}
+      <h1 id="hero-heading">{page.hero_title}</h1>
+      <p class="hero__subtitle">{page.hero_subtitle}</p>
+      <a class="btn btn--coral hero__cta" href="#lead-form">{page.cta_text}</a>
+
+      {
+        page.hero_trust_metrics?.length && (
+          <div class="hero__trust" aria-label="Vertrauenssignale">
+            <ul class="hero__metrics" role="list">
+              {page.hero_trust_metrics.map((metric) => (
+                <li>
+                  <span class="hero__metric-value">{metric.value}</span>
+                  <span class="hero__metric-label">{metric.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </div>
+
+    <div class="hero__visual">
+      {
+        page.hero_image ? (
+          <img
+            src={page.hero_image}
+            alt={page.hero_image_alt ?? ""}
+            loading="eager"
+            decoding="async"
+          />
+        ) : (
+          <div class="hero__visual-fallback" aria-hidden="true" />
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: clamp(2rem, 6vw, 4rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero__grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .hero__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .hero__eyebrow {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+  }
+
+  .hero__copy h1 {
+    max-width: 14ch;
+    line-height: 1.02;
+  }
+
+  .hero__subtitle {
+    margin-top: 1.25rem;
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    max-width: 44ch;
+  }
+
+  .hero__cta {
+    margin-top: 2rem;
+  }
+
+  .hero__trust {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .hero__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    list-style: none;
+  }
+
+  .hero__metrics li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .hero__metric-value {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-extrabold);
+    line-height: 1;
+  }
+
+  .hero__metric-label {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .hero__visual img,
+  .hero__visual-fallback {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .hero__visual-fallback {
+    background: linear-gradient(160deg, #2a2a2a 0%, #0a0a0a 100%);
+  }
+</style>

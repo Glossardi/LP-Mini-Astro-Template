@@ -1,0 +1,61 @@
+/**
+ * schumms.css — Design Tokens (schumms.com)
+ *
+ * Monochrom + Coral-Akzent. Scharfe Kanten, große Headlines, viel Whitespace.
+ */
+
+:root {
+  /* Core — wie Homepage */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-muted: #525252;
+  --color-line: #000000;
+
+  /* Akzent — Newsletter / Lead-Sections (Services-Page) */
+  --color-coral: #fd7857;
+  --color-coral-dark: #e5623e;
+
+  /* Optional: Subpage-Header (Team etc.) */
+  --color-violet: #827afe;
+
+  /* Semantic */
+  --color-text: var(--color-black);
+  --color-text-muted: var(--color-muted);
+  --color-text-on-dark: var(--color-white);
+  --color-background: var(--color-white);
+  --color-accent-section: var(--color-coral);
+  --color-border: #e2e2e2;
+
+  /* Typography — Inter wie schumms.com */
+  --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font-display);
+
+  --text-hero: clamp(2.75rem, 2rem + 3.5vw, 5.5rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2vw, 3.75rem);
+  --text-xl: clamp(1.375rem, 1.1rem + 1vw, 2rem);
+  --text-lg: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+
+  /* Layout */
+  --container-max: 80rem;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+  --section-spacing: clamp(3.5rem, 7vw, 5.5rem);
+  --section-spacing-sm: clamp(2rem, 4vw, 3rem);
+  --section-spacing-compact: clamp(2.5rem, 5vw, 4rem);
+
+  /* Schumms: keine abgerundeten Ecken */
+  --radius: 0;
+  --radius-lg: 0;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --tracking-tight: -0.03em;
+  --tracking-wide: 0.08em;
+}

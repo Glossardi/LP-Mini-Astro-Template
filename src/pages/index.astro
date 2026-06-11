@@ -1,101 +1,129 @@
 ---
-/**
- * index.astro — OnePager
- *
- * Alle Sektionen werden hier zusammengeführt.
- * Inhalte kommen aus src/data/site.ts.
- */
-import PageLayout from "@layouts/PageLayout.astro";
-import Hero from "@components/Hero.astro";
-import TrustBar from "@components/TrustBar.astro";
-import ServicesGrid from "@components/ServicesGrid.astro";
-import AboutTeaser from "@components/AboutTeaser.astro";
-import Process from "@components/Process.astro";
-import Testimonials from "@components/Testimonials.astro";
-import FAQ from "@components/FAQ.astro";
-import ContactSection from "@components/ContactSection.astro";
-import SectionDivider from "@components/SectionDivider.astro";
-import site from "@data/site";
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Nav from "@components/global/Nav.astro";
+import Footer from "@components/global/Footer.astro";
+import brand from "@data/brand";
+
+const pages = await getCollection("pages", ({ data }) => {
+  if (import.meta.env.PROD) return data.published;
+  return true;
+});
+
+const sorted = pages.sort((a, b) => a.data.title.localeCompare(b.data.title, "de"));
 ---
 
-<PageLayout title="Startseite" description={site.tagline}>
-  <Hero />
-  <SectionDivider variant="wave" fillColor="var(--color-surface)" />
-  <TrustBar />
-  <ServicesGrid />
-  <SectionDivider variant="curve" fillColor="var(--color-background)" />
-  <AboutTeaser />
-  <Process />
-  <Testimonials />
-  <FAQ />
-  <ContactSection />
-</PageLayout>
+<BaseLayout
+  title="Landingpages"
+  description="Schumm & Rösch — Agent-gestütztes Landing Page System"
+  robots="noindex, nofollow"
+>
+  <Nav minimal />
+  <main id="main-content" class="index">
+    <div class="container">
+      <p class="index__eyebrow">Schumm & Rösch</p>
+      <h1>Landingpages</h1>
+      <p class="index__intro">
+        Neue Seiten: Markdown in <code>src/content/pages/</code> — siehe <code>AGENTS.md</code>.
+      </p>
 
-<!-- Scroll Animations -->
-<script>
-  const reveals = document.querySelectorAll(".reveal");
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      <p class="index__hint">
+        Lead-Magnet: <a href="/arbeitsplatz-fitness-check/">arbeitsplatz-fitness-check</a>
+        · Showcase: <a href="/default-landing/">default-landing</a>
+        · Event: <a href="/hr-konferenz-wiesbaden/">hr-konferenz-wiesbaden</a>
+      </p>
 
-  if (!prefersReducedMotion && reveals.length > 0) {
-    reveals.forEach((el) => el.classList.add("reveal--hidden"));
+      <ul class="index__list divider-list" role="list">
+        {
+          sorted.map((entry) => (
+            <li class="divider-list__item index__item">
+              <div>
+                <a class="index__link" href={`/${entry.data.slug}/`}>
+                  {entry.data.title}
+                </a>
+              </div>
+              {!entry.data.published && <span class="index__badge">Entwurf</span>}
+            </li>
+          ))
+        }
+      </ul>
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal--visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    );
+      <p class="index__note">
+        <a href={brand.url}>schumms.com</a>
+      </p>
+    </div>
+  </main>
+  <Footer minimal />
+</BaseLayout>
 
-    reveals.forEach((el) => observer.observe(el));
-  }
-</script>
-
-<style is:global>
-  /* Initial animation state */
-  .animate-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideUp 0.6s ease forwards;
-  }
-  .animate-in--delay-1 { animation-delay: 0.15s; }
-  .animate-in--delay-2 { animation-delay: 0.3s; }
-
-  @keyframes fadeSlideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+<style>
+  .index {
+    padding-block: clamp(4rem, 10vw, 7rem);
   }
 
-  /* Scroll reveal */
-  .reveal--hidden {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal--visible {
-    opacity: 1;
-    transform: translateY(0);
+  .index__eyebrow {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
   }
 
-  /* Staggered reveal delays */
-  .reveal--hidden[data-reveal-delay="1"] { transition-delay: 0.1s; }
-  .reveal--hidden[data-reveal-delay="2"] { transition-delay: 0.2s; }
-  .reveal--hidden[data-reveal-delay="3"] { transition-delay: 0.3s; }
+  .index__intro {
+    margin-top: 1.25rem;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    max-width: 50ch;
+  }
 
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .animate-in,
-    .reveal--hidden {
-      opacity: 1;
-      transform: none;
-      animation: none;
-      transition: none;
-    }
+  .index__hint {
+    margin-top: 0.75rem;
+    font-size: var(--text-sm);
+    max-width: none;
+  }
+
+  .index__hint a {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .index code {
+    font-size: 0.9em;
+  }
+
+  .index__list {
+    margin-top: 3rem;
+    max-width: 40rem;
+  }
+
+  .index__item {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .index__link {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+
+  .index__link:hover {
+    text-decoration: underline;
+  }
+
+  .index__badge {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .index__note {
+    margin-top: 3rem;
+    font-size: var(--text-sm);
+    max-width: none;
+  }
+
+  .index__note a {
+    text-decoration: underline;
   }
 </style>

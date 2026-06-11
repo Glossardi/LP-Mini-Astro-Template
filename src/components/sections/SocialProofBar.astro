@@ -1,0 +1,169 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+const logosMonochrome = page.social_proof_logos_monochrome !== false;
+
+const hasContent =
+  page.social_proof_text ||
+  page.social_proof_metrics?.length ||
+  page.social_proof_logos?.length;
+
+if (!hasContent) {
+  return null;
+}
+---
+
+<section class="section--sm social-proof" id="social-proof" aria-label="Social Proof">
+  <div class="container social-proof__inner">
+    {page.social_proof_text && <p class="social-proof__text">{page.social_proof_text}</p>}
+
+    {
+      page.social_proof_metrics?.length ? (
+        <ul class="social-proof__metrics" role="list">
+          {page.social_proof_metrics.map((metric) => (
+            <li>
+              <span class="social-proof__value">{metric.value}</span>
+              <span class="social-proof__label">{metric.label}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null
+    }
+
+    {
+      page.social_proof_logos?.length ? (
+        <ul
+          class:list={["social-proof__logos", !logosMonochrome && "social-proof__logos--color"]}
+          role="list"
+          aria-label="Referenzkunden"
+        >
+          {page.social_proof_logos.map((logo) => (
+            <li>
+              {logo.image ? (
+                <img src={logo.image} alt={logo.name} loading="lazy" />
+              ) : (
+                <span>{logo.name}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      ) : null
+    }
+  </div>
+</section>
+
+<style>
+  .social-proof {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .social-proof__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+    padding-block: 1.75rem;
+  }
+
+  .social-proof__text {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    max-width: 50ch;
+  }
+
+  .social-proof__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2.5rem;
+    list-style: none;
+  }
+
+  .social-proof__metrics li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .social-proof__value {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-extrabold);
+    line-height: 1;
+  }
+
+  .social-proof__label {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .social-proof__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 3rem;
+    list-style: none;
+    align-items: center;
+    width: 100%;
+    max-width: 56rem;
+  }
+
+  .social-proof__logos li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 auto;
+    height: 3.5rem;
+    max-width: 11rem;
+  }
+
+  .social-proof__logos img {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+
+  .social-proof__logos:not(.social-proof__logos--color) img {
+    filter: grayscale(1) brightness(0);
+  }
+
+  .social-proof__logos--color img {
+    filter: none;
+    opacity: 1;
+  }
+
+  .social-proof__logos img:hover {
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    .social-proof__logos li {
+      height: 4rem;
+      max-width: 12rem;
+    }
+  }
+
+  .social-proof__logos span {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+</style>

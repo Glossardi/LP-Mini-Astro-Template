@@ -1,0 +1,163 @@
+---
+import type { LandingPageData } from "@lib/types";
+import brand from "@data/brand";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+const privacyNote =
+  page.form_privacy_note ??
+  "Ich willige ein, dass meine Angaben zur Beantwortung meiner Anfrage elektronisch erhoben und verarbeitet werden.";
+
+const formIntro = page.form_intro ?? "Schnell ausgefüllt — wir melden uns umgehend.";
+---
+
+<section class="section section--coral lead-form" id="lead-form" aria-labelledby="form-heading">
+  <div class="container split">
+    <div class="lead-form__intro">
+      <h2 id="form-heading">{page.form_title}</h2>
+      <p class="lead-form__hint">{formIntro}</p>
+    </div>
+
+    <form
+      class="lead-form__form"
+      id="landing-form"
+      data-webhook={page.form_webhook}
+      data-download={page.form_download_url ?? ""}
+      data-success={page.form_success_message ?? "Vielen Dank für deine Anfrage!"}
+    >
+      <div class="form-field">
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Name" autocomplete="name" required />
+      </div>
+
+      <div class="form-field">
+        <label class="sr-only" for="email">E-Mail-Adresse</label>
+        <input id="email" name="email" type="email" placeholder="E-Mail" autocomplete="email" required />
+      </div>
+
+      <div class="form-field">
+        <label class="sr-only" for="company">Firma</label>
+        <input id="company" name="company" type="text" placeholder="Firma" autocomplete="organization" required />
+      </div>
+
+      <div class="form-field form-field--checkbox">
+        <label class="checkbox-label">
+          <input type="checkbox" name="privacy" required />
+          <span>
+            {privacyNote}
+            <a href={brand.legal.datenschutz}>Datenschutzerklärung</a>
+          </span>
+        </label>
+      </div>
+
+      <button class="btn btn--block lead-form__submit" type="submit">
+        {page.form_cta}
+      </button>
+
+      <p class="lead-form__note">Kein Spam. <a href={brand.legal.datenschutz}>Datenschutzerklärung</a>.</p>
+      <p class="lead-form__status" id="form-status" role="status" aria-live="polite" hidden></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .lead-form__hint {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    max-width: 38ch;
+  }
+
+  .lead-form__form {
+    display: grid;
+    gap: 0.875rem;
+  }
+
+  .form-field--checkbox .checkbox-label {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .form-field--checkbox input {
+    margin-top: 0.2rem;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .form-field--checkbox a,
+  .lead-form__note a {
+    text-decoration: underline;
+  }
+
+  .lead-form__note {
+    font-size: var(--text-xs);
+    max-width: none;
+    opacity: 0.85;
+  }
+
+  .lead-form__status {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    max-width: none;
+  }
+
+  .lead-form__status[data-state="error"] {
+    color: #8b0000;
+  }
+</style>
+
+<script>
+  const form = document.getElementById("landing-form") as HTMLFormElement | null;
+  const status = document.getElementById("form-status");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form || !status) return;
+
+    const webhook = form.dataset.webhook;
+    const downloadUrl = form.dataset.download;
+    const successMessage = form.dataset.success ?? "Vielen Dank!";
+    const submitBtn = form.querySelector<HTMLButtonElement>(".lead-form__submit");
+
+    if (!webhook) return;
+
+    submitBtn?.setAttribute("disabled", "true");
+    status.hidden = false;
+    status.dataset.state = "";
+    status.textContent = "Wird gesendet …";
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch(webhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error("Request failed");
+
+      status.textContent = successMessage;
+      form.reset();
+
+      if (downloadUrl) {
+        window.setTimeout(() => {
+          window.open(downloadUrl, "_blank", "noopener,noreferrer");
+        }, 600);
+      }
+    } catch {
+      status.dataset.state = "error";
+      status.textContent = "Etwas ist schiefgelaufen. Bitte versuche es erneut.";
+    } finally {
+      submitBtn?.removeAttribute("disabled");
+    }
+  });
+</script>

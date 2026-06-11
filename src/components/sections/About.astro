@@ -1,0 +1,67 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.about_name && !page.about_bio) {
+  return null;
+}
+---
+
+<section class="section about" id="about" aria-labelledby="about-heading">
+  <div class="container split">
+    {
+      page.about_image && (
+        <img
+          class="about__photo"
+          src={page.about_image}
+          alt={page.about_name ?? "Ansprechpartnerin"}
+          loading="lazy"
+        />
+      )
+    }
+
+    <div class="about__content">
+      <h2 id="about-heading">{page.about_heading ?? "Wer steckt dahinter?"}</h2>
+      {page.about_name && <p class="about__name">{page.about_name}</p>}
+      {page.about_title && <p class="about__title">{page.about_title}</p>}
+      {page.about_bio && <p class="about__bio">{page.about_bio}</p>}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about__photo {
+    width: 100%;
+    max-width: 20rem;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .about__name {
+    margin-top: 1.25rem;
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
+    max-width: none;
+  }
+
+  .about__title {
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    max-width: none;
+  }
+
+  .about__bio {
+    margin-top: 1.25rem;
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: var(--color-text-muted);
+    max-width: none;
+  }
+</style>

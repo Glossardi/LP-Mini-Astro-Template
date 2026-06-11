@@ -1,0 +1,88 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.content_preview_items?.length && !page.content_preview_intro) {
+  return null;
+}
+---
+
+<section class="section content-preview" id="content-preview" aria-labelledby="content-preview-heading">
+  <div class="container split split--40-60">
+    <div class="content-preview__copy">
+      <h2 id="content-preview-heading">
+        {page.content_preview_heading ?? "Das steckt drin"}
+      </h2>
+      {page.content_preview_intro && <p class="content-preview__intro">{page.content_preview_intro}</p>}
+
+      {
+        page.content_preview_items?.length ? (
+          <ol class="divider-list content-preview__list">
+            {page.content_preview_items.map((item, index) => (
+              <li class="divider-list__item">
+                <span class="number-badge" aria-hidden="true">{index + 1}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  {item.description && <p>{item.description}</p>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        ) : null
+      }
+
+      <a class="btn btn--block content-preview__cta" href="#lead-form">{page.cta_text}</a>
+    </div>
+
+    {
+      page.content_preview_image && (
+        <img
+          class="content-preview__visual"
+          src={page.content_preview_image}
+          alt={page.content_preview_image_alt ?? ""}
+          loading="lazy"
+        />
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .content-preview__intro {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .content-preview__list {
+    margin-top: 2rem;
+  }
+
+  .content-preview__cta {
+    margin-top: 2rem;
+  }
+
+  .content-preview h3 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 0.35rem;
+  }
+
+  .content-preview p {
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    max-width: none;
+  }
+
+  .content-preview__visual {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+</style>

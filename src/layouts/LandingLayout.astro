@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Nav from "@components/global/Nav.astro";
+import Footer from "@components/global/Footer.astro";
+import CookieBanner from "@components/global/CookieBanner.astro";
+import SectionRenderer from "@components/SectionRenderer.astro";
+import type { LandingPageData } from "@lib/types";
+import { resolveContentSections, resolveSectionVisibility } from "@lib/sections";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+const visibility = resolveSectionVisibility(page.sections);
+const sections = resolveContentSections(page.sections, page.section_order);
+const navCta = page.nav_cta_text ?? page.cta_text;
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  ogImage={page.hero_image}
+  robots={page.published ? "index, follow" : "noindex, nofollow"}
+>
+  {
+    visibility.nav && (
+      <Nav landing ctaText={navCta} ctaHref="#lead-form" />
+    )
+  }
+  <main id="main-content">
+    <SectionRenderer page={page} sections={sections} />
+  </main>
+  {visibility.footer && <Footer landing />}
+  <CookieBanner />
+</BaseLayout>

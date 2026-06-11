@@ -1,0 +1,129 @@
+---
+import brand from "@data/brand";
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+const hasContent =
+  page.location_intro ||
+  page.location_venue ||
+  page.location_address ||
+  page.location_phone ||
+  page.location_email;
+
+if (!hasContent) {
+  return null;
+}
+
+const phone = page.location_phone ?? brand.contact.phone;
+const email = page.location_email ?? brand.contact.email;
+---
+
+<section class="section section--compact location" id="location" aria-labelledby="location-heading">
+  <div class="container split">
+    <div class="location__content">
+      <h2 id="location-heading">{page.location_heading ?? "Location"}</h2>
+      {page.location_intro && <p class="location__intro">{page.location_intro}</p>}
+
+      <ul class="location__details" role="list">
+        {
+          page.location_venue && (
+            <li>
+              <span class="location__label">Venue</span>
+              <span>{page.location_venue}</span>
+            </li>
+          )
+        }
+        {
+          page.location_address && (
+            <li>
+              <span class="location__label">Adresse</span>
+              <span>{page.location_address}</span>
+            </li>
+          )
+        }
+        {
+          phone && (
+            <li>
+              <span class="location__label">Telefon</span>
+              <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
+            </li>
+          )
+        }
+        {
+          email && (
+            <li>
+              <span class="location__label">E-Mail</span>
+              <a href={`mailto:${email}`}>{email}</a>
+            </li>
+          )
+        }
+      </ul>
+    </div>
+
+    {
+      page.location_image && (
+        <img
+          class="location__visual"
+          src={page.location_image}
+          alt={page.location_image_alt ?? page.location_venue ?? "Veranstaltungsort"}
+          loading="lazy"
+        />
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .location__intro {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .location__details {
+    margin-top: 2rem;
+    list-style: none;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .location__details li {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--text-base);
+  }
+
+  @media (min-width: 768px) {
+    .location__details li {
+      grid-template-columns: 6rem 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+  }
+
+  .location__label {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .location__details a {
+    color: inherit;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .location__visual {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+</style>

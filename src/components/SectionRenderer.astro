@@ -1,0 +1,68 @@
+---
+import type { LandingPageData } from "@lib/types";
+import type { ContentSectionId } from "@lib/sections";
+import Hero from "@components/sections/Hero.astro";
+import SocialProofBar from "@components/sections/SocialProofBar.astro";
+import Problem from "@components/sections/Problem.astro";
+import Pricing from "@components/sections/Pricing.astro";
+import Program from "@components/sections/Program.astro";
+import Transformation from "@components/sections/Transformation.astro";
+import Benefits from "@components/sections/Benefits.astro";
+import Process from "@components/sections/Process.astro";
+import Speakers from "@components/sections/Speakers.astro";
+import Testimonial from "@components/sections/Testimonial.astro";
+import About from "@components/sections/About.astro";
+import ContentPreview from "@components/sections/ContentPreview.astro";
+import Location from "@components/sections/Location.astro";
+import FAQ from "@components/sections/FAQ.astro";
+import LeadForm from "@components/sections/LeadForm.astro";
+import SecondaryCTA from "@components/sections/SecondaryCTA.astro";
+
+interface Props {
+  page: LandingPageData;
+  sections: ContentSectionId[];
+}
+
+const { page, sections } = Astro.props;
+---
+
+{
+  sections.map((id) => {
+    switch (id) {
+      case "hero":
+        return <Hero page={page} />;
+      case "social_proof_bar":
+        return <SocialProofBar page={page} />;
+      case "problem":
+        return <Problem page={page} />;
+      case "pricing":
+        return <Pricing page={page} />;
+      case "program":
+        return <Program page={page} />;
+      case "transformation":
+        return <Transformation page={page} />;
+      case "benefits":
+        return <Benefits page={page} />;
+      case "process":
+        return <Process page={page} />;
+      case "speakers":
+        return <Speakers page={page} />;
+      case "testimonial":
+        return <Testimonial page={page} />;
+      case "about":
+        return <About page={page} />;
+      case "content_preview":
+        return <ContentPreview page={page} />;
+      case "location":
+        return <Location page={page} />;
+      case "faq":
+        return <FAQ page={page} />;
+      case "form":
+        return <LeadForm page={page} />;
+      case "secondary_cta":
+        return <SecondaryCTA page={page} />;
+      default:
+        return null;
+    }
+  })
+}

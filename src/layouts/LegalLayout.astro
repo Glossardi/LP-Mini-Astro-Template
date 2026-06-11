@@ -1,0 +1,49 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Nav from "@components/global/Nav.astro";
+import Footer from "@components/global/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "" } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav minimal />
+  <main id="main-content" class="legal-main">
+    <div class="container">
+      <slot />
+    </div>
+  </main>
+  <Footer minimal />
+</BaseLayout>
+
+<style>
+  .legal-main {
+    padding-block: clamp(3rem, 6vw, 5rem);
+  }
+
+  .legal-main :global(h1) {
+    margin-bottom: 1.5rem;
+  }
+
+  .legal-main :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: var(--text-xl);
+  }
+
+  .legal-main :global(p),
+  .legal-main :global(li) {
+    margin-bottom: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .legal-main :global(ul) {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+</style>

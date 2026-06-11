@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import LandingLayout from "@layouts/LandingLayout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages", ({ data }) => {
+    if (import.meta.env.PROD) return data.published;
+    return true;
+  });
+
+  return pages.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { page: entry.data },
+  }));
+}
+
+interface Props {
+  page: import("@lib/types").LandingPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<LandingLayout page={page} />

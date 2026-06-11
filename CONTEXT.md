@@ -1,32 +1,82 @@
-# CONTEXT — LP Mini Astro Template
-
-> Arbeitsdokument für die Umbau-Phase. Wird mit den Produktspezifikationen ergänzt.
+# CONTEXT — schumms-landings
 
 ## Vision
 
-Dieses Repository ist der Nachfolger von **KMU-Mini-Astro-Template**.
-Statt lokaler KMU-Websites (Handwerk, Praxen, Gewerbe) optimieren wir das Template
-für **Landingpages** — produziert in hoher Qualität und hohem Tempo durch KI-Agenten.
+Landing Page System für **Schumm & Rösch**. Agenten schreiben **nur Markdown** in `src/content/pages/` — das Template rendert on-brand Pages mit konfigurierbaren Sections.
 
-## Ausgangslage
+Production: `https://landing.schumms.com` · Preview: `dev`-Branch
 
-- Basis: Astro 6, statischer Build, datengetriebene Konfiguration
-- Bisheriger Workflow: `site.ts` anpassen → OnePager deployen
-- Zielgruppe bisher: Freelancer mit lokalen Dienstleistern
+---
 
-## Offene Spezifikation (noch einzutragen)
+## Architektur
 
-- [ ] Ziel-Landingpage-Typen (Lead-Gen, Produkt, Event, SaaS, …)
-- [ ] Pflicht-Sektionen vs. optionale Module
-- [ ] Conversion-Fokus (Formulare, CTAs, Tracking-Hooks)
-- [ ] Rechtliches (Impressum/Datenschutz: behalten, vereinfachen, entfernen?)
-- [ ] Theme-/Branding-System (Presets, Overrides)
-- [ ] Agent-Workflow (Input-Schema, Dateistruktur, Qualitätsregeln)
-- [ ] Deployment-Ziel (Cloudflare Pages o.ä.)
+```
+Agent → Markdown (Frontmatter + sections + section_order)
+     → Astro Content Layer (Zod-Schema)
+     → LandingLayout + SectionRenderer
+     → Section-Komponenten
+     → Static HTML (dist/)
+```
 
-## Nächste Schritte
+| Agent darf | Fix (nicht anfassen) |
+|------------|----------------------|
+| `src/content/pages/*.md` | `src/components/`, `src/layouts/` |
+| `public/pages/[slug]/` Bilder | `src/styles/`, `src/data/brand.ts` |
+| | `src/content.config.ts`, `src/lib/sections.ts` |
 
-1. Repository-Initialisierung (Metadaten, Remotes, Build-Verifikation) ✅
-2. Produktspezifikation vom Maintainer einarbeiten
-3. KMU-spezifische Inhalte/Struktur auf LP-Use-Case umbauen
-4. Agent-Dokumentation (`AGENTS.md`) finalisieren
+---
+
+## Sections (18)
+
+`nav` · `hero` · `social_proof_bar` · `problem` · `pricing` · `program` · `transformation` · `benefits` · `process` · `speakers` · `testimonial` · `about` · `content_preview` · `location` · `faq` · `form` · `secondary_cta` · `footer`
+
+Steuerung: `sections:` + optional `section_order:` für Render-Reihenfolge.
+
+**Referenz-Seiten:**
+
+| Slug | Zweck |
+|------|--------|
+| `arbeitsplatz-fitness-check` | Lead-Magnet, conversion-optimierte Reihenfolge |
+| `default-landing` | Alle Standard-Sections aktiv |
+| `hr-konferenz-wiesbaden` | Event (Programm, Speaker, Location, Pricing in Problem) |
+| `workspace-day-september` | Event-Kompaktvariante |
+
+**Vorlagen:** `_template.leadmagnet.md` · `_template.event.md` · `_template.md`
+
+---
+
+## Status
+
+- [x] 18 Sections + Frontmatter-Steuerung + `section_order`
+- [x] Schumms.com Design (Split-Hero, Coral-CTA, Partner-Logos)
+- [x] Image Pool (`public/images/pool/manifest.json`, 79 Bilder)
+- [x] CI (GitHub Actions: `pnpm run build`)
+- [x] `published: false` → noindex, kein Production-Build
+- [ ] Impressum/Datenschutz juristisch finalisieren
+- [ ] Self-hosted Fonts (WOFF2, DSGVO)
+- [ ] Production `/` → Redirect schumms.com (optional)
+
+---
+
+## Design-System
+
+| Element | Wert |
+|---------|------|
+| Coral CTA | `#FD7857` |
+| Basis | Schwarz/Weiß, Inter |
+| Hero | Split 50/50 |
+| Formular | Coral-Section `#lead-form` |
+| Footer LP | Legal only |
+
+CSS: `src/styles/schumms.css` + `src/styles/global.css`
+
+---
+
+## Deployment
+
+| Branch | Ziel |
+|--------|------|
+| `dev` | Preview |
+| `main` | Production |
+
+Coolify: `pnpm run build` → `dist/`

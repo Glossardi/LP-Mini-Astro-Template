@@ -1,0 +1,165 @@
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
+import { ALL_SECTION_IDS, CONTENT_SECTION_IDS } from "./src/lib/sections";
+
+const sectionFlags = Object.fromEntries(
+  ALL_SECTION_IDS.map((id) => [id, z.boolean().optional()]),
+) as Record<(typeof ALL_SECTION_IDS)[number], z.ZodOptional<z.ZodBoolean>>;
+
+const sectionsSchema = z.object(sectionFlags).optional();
+
+const benefitItem = z.object({
+  headline: z.string(),
+  description: z.string(),
+});
+
+const processStep = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const metricItem = z.object({
+  value: z.string(),
+  label: z.string(),
+});
+
+const logoItem = z.object({
+  name: z.string(),
+  image: z.string().optional(),
+});
+
+const speakerItem = z.object({
+  name: z.string(),
+  title: z.string().optional(),
+  bio: z.string().optional(),
+  image: z.string().optional(),
+  image_alt: z.string().optional(),
+});
+
+const programItem = z.object({
+  type: z.string().optional(),
+  title: z.string(),
+  speaker: z.string().optional(),
+  role: z.string().optional(),
+  organization: z.string().optional(),
+  organization_logo: z.string().optional(),
+  description: z.string().optional(),
+});
+
+const faqItem = z.object({
+  question: z.string(),
+  answer: z.string(),
+});
+
+const contentPreviewItem = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+});
+
+const landingSchema = z.object({
+  slug: z.string().regex(/^[a-z0-9-]+$/),
+  published: z.boolean().default(false),
+  title: z.string().max(60),
+  description: z.string().max(160),
+  sections: sectionsSchema,
+  section_order: z.array(z.enum(CONTENT_SECTION_IDS)).optional(),
+
+  nav_cta_text: z.string().optional(),
+
+  hero_eyebrow: z.string().optional(),
+  hero_title: z.string().max(80),
+  hero_subtitle: z.string().max(300),
+  hero_image: z.string().optional(),
+  hero_image_alt: z.string().optional(),
+  cta_text: z.string(),
+  hero_trust_metrics: z.array(metricItem).max(3).optional(),
+
+  social_proof_text: z.string().optional(),
+  social_proof_metrics: z.array(metricItem).max(3).optional(),
+  social_proof_logos: z.array(logoItem).max(8).optional(),
+  social_proof_logos_monochrome: z.boolean().optional(),
+
+  problem_heading: z.string().optional(),
+  problem_intro: z.string().optional(),
+  problem_points: z.array(z.string()).min(1).max(3).optional(),
+
+  pricing_eyebrow: z.string().optional(),
+  pricing_label: z.string().optional(),
+  pricing_amount: z.string().optional(),
+  pricing_currency: z.string().optional(),
+  pricing_text: z.string().optional(),
+  pricing_cta: z.string().optional(),
+
+  program_heading: z.string().optional(),
+  program_intro: z.string().optional(),
+  program_items: z.array(programItem).optional(),
+
+  speakers_heading: z.string().optional(),
+  speakers_tagline: z.string().optional(),
+  speakers: z.array(speakerItem).optional(),
+
+  location_heading: z.string().optional(),
+  location_intro: z.string().optional(),
+  location_venue: z.string().optional(),
+  location_address: z.string().optional(),
+  location_phone: z.string().optional(),
+  location_email: z.string().optional(),
+  location_image: z.string().optional(),
+  location_image_alt: z.string().optional(),
+
+  transformation_heading: z.string().optional(),
+  transformation_before: z.string().optional(),
+  transformation_after: z.string().optional(),
+
+  benefits_heading: z.string().optional(),
+  benefits_intro: z.string().optional(),
+  benefits: z.array(benefitItem).min(3).max(5).optional(),
+
+  process_heading: z.string().optional(),
+  process_steps: z.array(processStep).min(3).max(3).optional(),
+
+  testimonial_heading: z.string().optional(),
+  testimonial_quote: z.string().optional(),
+  testimonial_author: z.string().optional(),
+  testimonial_role: z.string().optional(),
+  testimonial_company: z.string().optional(),
+  testimonial_image: z.string().optional(),
+  testimonial_video_url: z.string().url().optional(),
+
+  about_heading: z.string().optional(),
+  about_name: z.string().optional(),
+  about_title: z.string().optional(),
+  about_image: z.string().optional(),
+  about_bio: z.string().optional(),
+
+  content_preview_heading: z.string().optional(),
+  content_preview_intro: z.string().optional(),
+  content_preview_image: z.string().optional(),
+  content_preview_image_alt: z.string().optional(),
+  content_preview_items: z.array(contentPreviewItem).optional(),
+
+  faq_heading: z.string().optional(),
+  faq_intro: z.string().optional(),
+  faq: z.array(faqItem).optional(),
+
+  form_title: z.string(),
+  form_intro: z.string().optional(),
+  form_cta: z.string(),
+  form_webhook: z.string().url(),
+  form_download_url: z.string().url().optional(),
+  form_success_message: z.string().optional(),
+  form_privacy_note: z.string().optional(),
+
+  secondary_cta_heading: z.string().optional(),
+  secondary_cta_text: z.string().optional(),
+  secondary_cta_button: z.string().optional(),
+  secondary_cta_href: z.string().optional(),
+});
+
+const pages = defineCollection({
+  loader: glob({ base: "./src/content/pages", pattern: "**/[^_]*.{md,mdx}" }),
+  schema: landingSchema,
+});
+
+export const collections = { pages };

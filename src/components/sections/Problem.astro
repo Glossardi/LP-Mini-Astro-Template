@@ -1,0 +1,78 @@
+---
+import type { LandingPageData } from "@lib/types";
+import PricingCard from "@components/sections/PricingCard.astro";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.problem_points?.length && !page.problem_intro) {
+  return null;
+}
+
+const hasPricing = Boolean(page.pricing_amount);
+---
+
+<section class="section section--compact problem" id="problem" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class:list={["split", hasPricing && "split--intro-pricing", "problem__layout"]}>
+      <div class="problem__intro">
+        <h2 id="problem-heading">{page.problem_heading ?? "Kennst du das?"}</h2>
+        {page.problem_intro && <p class="problem__intro-text">{page.problem_intro}</p>}
+      </div>
+
+      {hasPricing && (
+        <aside class="problem__pricing" aria-label="Ticket-Preis">
+          <PricingCard page={page} />
+        </aside>
+      )}
+    </div>
+
+    {
+      page.problem_points?.length ? (
+        <ol class="divider-list problem__list">
+          {page.problem_points.map((point, index) => (
+            <li class="divider-list__item">
+              <span class="number-badge" aria-hidden="true">{index + 1}</span>
+              <p>{point}</p>
+            </li>
+          ))}
+        </ol>
+      ) : null
+    }
+  </div>
+</section>
+
+<style>
+  .problem__intro-text {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    max-width: none;
+  }
+
+  .problem__pricing {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .problem__pricing {
+      justify-self: end;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .problem__pricing {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .problem__list {
+    margin-top: 2.5rem;
+    max-width: 48rem;
+  }
+</style>

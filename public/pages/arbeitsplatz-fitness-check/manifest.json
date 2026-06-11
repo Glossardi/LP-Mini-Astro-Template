@@ -1,0 +1,30 @@
+{
+  "page": "arbeitsplatz-fitness-check",
+  "description": "Lead-Magnet-Referenz — Arbeitsplatz-Fitness-Check",
+  "images": [
+    {
+      "file": "/pages/arbeitsplatz-fitness-check/hero.jpg",
+      "role": "hero_image",
+      "alt": "Helles Büro mit flexiblen Arbeitszonen und Pflanzen",
+      "source": "pool/hero/home-schumms-hero-buero-zukunft.jpg"
+    },
+    {
+      "file": "/pages/arbeitsplatz-fitness-check/preview.jpg",
+      "role": "content_preview_image",
+      "alt": "Vorschau Arbeitsplatz-Fitness-Check PDF",
+      "source": "pool/content/schumms-e-book.jpg"
+    },
+    {
+      "file": "/pages/arbeitsplatz-fitness-check/about.jpg",
+      "role": "about_image",
+      "alt": "Susanne Busshart, Geschäftsführerin Schumm & Rösch",
+      "source": "pool/team/susanne-busshart.jpg"
+    },
+    {
+      "file": "/pages/arbeitsplatz-fitness-check/testimonial.jpg",
+      "role": "testimonial_image",
+      "alt": "Moderne Büroküche als Referenzprojekt",
+      "source": "default-landing/testimonial.jpg"
+    }
+  ]
+}

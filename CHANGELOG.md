@@ -1,43 +1,43 @@
 # Changelog
 
-Alle wichtigen Änderungen werden in dieser Datei dokumentiert.
-
 Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
+
+---
+
+## [1.1.0] — 2026-06-11
+
+### Added
+
+- **18-Section-System** — Event-Sections: `pricing`, `program`, `speakers`, `location`
+- Agent-Vorlagen: `_template.leadmagnet.md`, `_template.event.md`
+- Referenz-Seiten: `arbeitsplatz-fitness-check`, `hr-konferenz-wiesbaden`
+- Image Pool von schumms.com (`public/images/pool/` + `manifest.json`)
+- Asset-Skripte: `scripts/fetch-schumms-image-pool.py`, `scripts/fetch-hr-konferenz-assets.sh`
+- CI-Workflow (GitHub Actions)
+- `section_order` für custom Funnel-Reihenfolge
+- Problem-Section: 2-Spalten mit eingebettetem Pricing (Events)
+
+### Changed
+
+- Schumms-Design: Split-Hero, Coral-Formular, globale `.split`-Layouts
+- Lead-Magnet-Funnel: FAQ vor Formular, CTAs in Benefits/ContentPreview/Testimonial
+- README, CONTEXT, AGENTS.md für Template-Nutzung überarbeitet
+- Index-Seite listet alle published Pages
+
+### Removed
+
+- Legacy-Komponenten (flache `src/components/*.astro`)
+- KMU-Platzhalter-SVGs, `site.ts` / `theme.ts` / `themes.ts`
+- Verwaiste Assets `public/pages/future-work-2026/`
+
+---
+
+## [1.0.0] — 2026-06-11
+
+Initiale 14-Section-Basis, Partner-Logos, `default-landing` Referenz.
 
 ---
 
 ## [0.1.0] — 2026-06-11
 
-### Hinzugefügt
-
-- Neues Repository `LP-Mini-Astro-Template` als Umbau-Basis aus KMU-Mini-Astro-Template
-- `CONTEXT.md` für Produktspezifikation und Umbau-Roadmap
-- README und Metadaten auf Landingpage-Fokus ausgerichtet
-
-### Hinweis
-
-Technische Basis (Astro 6, Theme-Presets, OnePager-Struktur) entspricht noch dem KMU-Template.
-LP-spezifischer Umbau folgt.
-
----
-
-## [1.0.0] — 2024-01 (KMU-Mini-Astro-Template)
-
-### Hinzugefügt
-
-- Initiales Template-Release
-- Astro-Basiskonfiguration mit statischem Build
-- Globales Design-Token-System via `theme.ts` und CSS Custom Properties
-- Stammdaten-Konfiguration via `site.ts`
-- Layouts: `BaseLayout.astro`, `PageLayout.astro`
-- Komponenten: `Header`, `Footer`, `Hero`, `ServicesGrid`, `TrustIndicators`, `AboutTeaser`, `Process`, `Testimonials`, `FAQ`, `CTA`, `ContactSection`
-- Seiten: Startseite, Leistungen, Über uns, Kontakt, Impressum, Datenschutz, 404
-- Sitemap via `@astrojs/sitemap`
-- `robots.txt` als Astro-Endpoint
-- Demo-Inhalt „Muster Elektrotechnik"
-- Platzhalter-Rechtsseiten (Impressum, Datenschutz) mit TODO-Markierungen
-- `README.md` mit Quick Start und Deployment-Anleitungen
-- `AGENTS.md` für Coding-Agent-Workflows
-- `.editorconfig` für konsistente Code-Formatierung
-- `.gitignore` für Astro-Projekte
-- `LICENSE` (MIT)
+Fork-Basis aus KMU-Mini-Astro-Template.

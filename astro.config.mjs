@@ -7,7 +7,7 @@ import icon from "astro-icon";
 
 export default defineConfig({
   // Set to your production domain before going live
-  site: "https://example.com",
+  site: "https://landing.schumms.com",
 
   // Static output — no server-side rendering
   output: "static",

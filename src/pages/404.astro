@@ -1,87 +1,44 @@
 ---
-/**
- * 404.astro — Fehlerseite
- *
- * Wird bei nicht gefundenen Seiten angezeigt.
- * Cloudflare Pages: funktioniert out of the box.
- */
-import PageLayout from "@layouts/PageLayout.astro";
-import site from "@data/site";
+import LegalLayout from "@layouts/LegalLayout.astro";
+import brand from "@data/brand";
 ---
 
-<PageLayout
+<LegalLayout
   title="Seite nicht gefunden"
   description="Die angeforderte Seite wurde nicht gefunden."
-  robots="noindex, nofollow"
 >
-  <section class="error-page section">
-    <div class="container error-content">
-      <div class="error-code" aria-hidden="true">404</div>
-      <h1>Seite nicht gefunden</h1>
-      <p>
-        Die gesuchte Seite existiert nicht oder wurde verschoben.
-        Vielleicht hilft Ihnen einer dieser Links weiter:
-      </p>
-      <nav class="error-links" aria-label="Hilfreiche Links">
-        <ul role="list">
-          <li><a href="/" class="btn btn--primary">Zur Startseite</a></li>
-          <li><a href="/#services" class="btn btn--outline">Unsere Leistungen</a></li>
-          <li><a href="/#contact" class="btn btn--outline">Kontakt aufnehmen</a></li>
-        </ul>
-      </nav>
-      <p class="error-contact">
-        Oder rufen Sie uns direkt an:
-        <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`}>{site.contact.phone}</a>
-      </p>
-    </div>
-  </section>
-</PageLayout>
+  <div class="error">
+    <p class="error__code" aria-hidden="true">404</p>
+    <h1>Seite nicht gefunden</h1>
+    <p>Die gesuchte Landingpage existiert nicht oder wurde verschoben.</p>
+    <a class="btn btn--primary" href="/">Zur Übersicht</a>
+    <p class="error__contact">
+      Fragen? <a href={`mailto:${brand.contact.email}`}>{brand.contact.email}</a>
+    </p>
+  </div>
+</LegalLayout>
 
 <style>
-  .error-page {
-    display: flex;
-    align-items: center;
-    min-height: 60vh;
-  }
-
-  .error-content {
+  .error {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-    max-width: 600px;
-    margin-inline: auto;
-  }
-
-  .error-code {
-    font-size: clamp(5rem, 15vw, 9rem);
-    font-weight: 700;
-    line-height: 1;
-    color: var(--color-primary);
-    opacity: 0.15;
-  }
-
-  .error-content h1 { margin-top: -3rem; }
-
-  .error-content p {
-    color: var(--color-text-muted);
-    font-size: 1.05rem;
-  }
-
-  .error-links ul {
-    list-style: none;
-    display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding-block: 2rem;
   }
 
-  .error-contact {
-    font-size: 0.95rem;
+  .error__code {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 7rem);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-brand-violet);
+    opacity: 0.2;
+    line-height: 1;
   }
-  .error-contact a {
-    color: var(--color-primary);
-    font-weight: 600;
+
+  .error__contact {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
   }
 </style>

@@ -1,6 +1,7 @@
 {
-  "name": "lp-mini-astro-template",
-  "version": "0.1.0",
+  "name": "schumms-landings",
+  "version": "1.1.0",
+  "description": "Agent-gestütztes Landing Page Template für Schumm & Rösch — 18 Sections, Markdown-only Workflow",
   "private": true,
   "type": "module",
   "scripts": {

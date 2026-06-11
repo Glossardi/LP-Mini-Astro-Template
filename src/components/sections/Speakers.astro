@@ -1,0 +1,115 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.speakers?.length) {
+  return null;
+}
+---
+
+<section class="section section--compact speakers" id="speakers" aria-labelledby="speakers-heading">
+  <div class="container">
+    <div class="speakers__header">
+      <h2 id="speakers-heading">{page.speakers_heading ?? "Die Speaker"}</h2>
+      {page.speakers_tagline && <p class="speakers__tagline">{page.speakers_tagline}</p>}
+    </div>
+
+    <ul class="speakers__grid" role="list">
+      {
+        page.speakers.map((speaker) => (
+          <li class="speakers__card">
+            {speaker.image && (
+              <img
+                class="speakers__photo"
+                src={speaker.image}
+                alt={speaker.image_alt ?? speaker.name}
+                loading="lazy"
+              />
+            )}
+            <div class="speakers__content">
+              {speaker.bio && <p class="speakers__bio">{speaker.bio}</p>}
+              <p class="speakers__name">{speaker.name}</p>
+              {speaker.title && <p class="speakers__title">{speaker.title}</p>}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .speakers__header {
+    margin-bottom: 2rem;
+  }
+
+  .speakers__tagline {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    max-width: none;
+  }
+
+  .speakers__grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    list-style: none;
+  }
+
+  @media (min-width: 768px) {
+    .speakers__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .speakers__card {
+    display: grid;
+    gap: 1.25rem;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .speakers__card {
+      grid-template-columns: 8rem 1fr;
+      align-items: start;
+    }
+  }
+
+  .speakers__photo {
+    width: 100%;
+    max-width: 8rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .speakers__bio {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    max-width: none;
+  }
+
+  .speakers__name {
+    margin-top: 1rem;
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    max-width: none;
+  }
+
+  .speakers__title {
+    margin-top: 0.25rem;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    max-width: none;
+  }
+</style>

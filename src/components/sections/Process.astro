@@ -1,0 +1,49 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.process_steps?.length) {
+  return null;
+}
+---
+
+<section class="section process" id="process" aria-labelledby="process-heading">
+  <div class="container split split--40-60">
+    <div>
+      <h2 id="process-heading">{page.process_heading ?? "So funktioniert's"}</h2>
+    </div>
+
+    <ol class="divider-list">
+      {
+        page.process_steps.map((step, index) => (
+          <li class="divider-list__item">
+            <span class="number-badge" aria-hidden="true">{index + 1}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .process h3 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 0.35rem;
+  }
+
+  .process p {
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    max-width: none;
+  }
+</style>

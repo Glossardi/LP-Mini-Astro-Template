@@ -1,0 +1,124 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.program_items?.length) {
+  return null;
+}
+---
+
+<section class="section section--compact program" id="program" aria-labelledby="program-heading">
+  <div class="container">
+    <div class="program__header">
+      <h2 id="program-heading">{page.program_heading ?? "Programm"}</h2>
+      {page.program_intro && <p class="program__intro">{page.program_intro}</p>}
+    </div>
+
+    <ol class="program__list" role="list">
+      {
+        page.program_items.map((item) => (
+          <li class="program__item">
+            <div class="program__meta">
+              {item.type && <span class="program__type">{item.type}</span>}
+              {item.organization_logo && (
+                <img
+                  class="program__org-logo"
+                  src={item.organization_logo}
+                  alt={item.organization ?? ""}
+                  loading="lazy"
+                />
+              )}
+            </div>
+            <h3 class="program__title">{item.title}</h3>
+            {(item.speaker || item.role) && (
+              <p class="program__speaker">
+                {item.speaker}
+                {item.speaker && item.role && " · "}
+                {item.role}
+              </p>
+            )}
+            {item.organization && !item.organization_logo && (
+              <p class="program__org">{item.organization}</p>
+            )}
+            {item.description && <p class="program__description">{item.description}</p>}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .program__header {
+    margin-bottom: 2rem;
+  }
+
+  .program__intro {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .program__list {
+    list-style: none;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .program__item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .program__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .program__type {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  .program__org-logo {
+    height: 1.75rem;
+    width: auto;
+    max-width: 8rem;
+    object-fit: contain;
+  }
+
+  .program__title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    max-width: 48rem;
+  }
+
+  .program__speaker,
+  .program__org {
+    margin-top: 0.5rem;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    max-width: none;
+  }
+
+  .program__description {
+    margin-top: 1rem;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    max-width: none;
+  }
+</style>

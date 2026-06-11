@@ -1,0 +1,37 @@
+{
+  "page": "default-landing",
+  "description": "Demo-Assets für Referenz-Landingpage — Pfade wie in default-landing.md",
+  "images": [
+    {
+      "file": "/pages/default-landing/hero.jpg",
+      "role": "hero_image",
+      "alt": "Modernes Büro mit natürlichem Licht und flexiblen Arbeitsbereichen",
+      "pool_equivalent": "/images/pool/hero/home-schumms-hero-buero-zukunft.jpg",
+      "source": "schumms.com Homepage Hero"
+    },
+    {
+      "file": "/pages/default-landing/about.jpg",
+      "role": "about_image",
+      "alt": "Frau mit Brille und Blazer steht in modernem Arbeitsumfeld.",
+      "pool_equivalent": "/images/pool/team/68c446bebd461c0bdec13712-susanne-busshart.jpg",
+      "source": "schumms.com Team — Susanne Busshart"
+    },
+    {
+      "file": "/pages/default-landing/preview.jpg",
+      "role": "content_preview_image",
+      "alt": "E-Book Vorschau Future Work 2026",
+      "pool_alternatives": [
+        "/images/pool/content/68e63bfcbcd4ac95929e7f9d-schumms-e-book.jpg",
+        "/images/pool/hero/68e63fab58fdfe2e3ca0c186-schumms-services-1.jpg"
+      ],
+      "source": "schumms.com Services-Bürofoto"
+    },
+    {
+      "file": "/pages/default-landing/testimonial.jpg",
+      "role": "testimonial_image",
+      "alt": "Moderne Büroküche mit dunklen Schränken, grüner Polsterbank und warmem Licht.",
+      "pool_equivalent": "/images/pool/cases/68e630d51007343f9b4cb872-schumms-cimt-case.jpg",
+      "source": "schumms.com Referenz cimt ag"
+    }
+  ]
+}

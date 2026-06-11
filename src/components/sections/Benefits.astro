@@ -1,0 +1,72 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.benefits?.length) {
+  return null;
+}
+
+const heading = page.benefits_heading ?? "Deine Vorteile";
+---
+
+<section class="section benefits" id="benefits" aria-labelledby="benefits-heading">
+  <div class="container split split--40-60">
+    <div class="benefits__intro">
+      <h2 id="benefits-heading">{heading}</h2>
+      {page.benefits_intro && <p class="benefits__intro-text">{page.benefits_intro}</p>}
+    </div>
+
+    <div class="benefits__right">
+      <ol class="divider-list benefits__list">
+        {
+          page.benefits.map((benefit, index) => (
+            <li class="divider-list__item">
+              <span class="number-badge" aria-hidden="true">{index + 1}</span>
+              <div>
+                <h3 class="benefits__headline">{benefit.headline}</h3>
+                <p class="benefits__description">{benefit.description}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <a class="btn btn--block benefits__cta" href="#lead-form">{page.cta_text}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits__intro-text {
+    margin-top: 1.25rem;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    max-width: 36ch;
+  }
+
+  .benefits__list {
+    margin: 0;
+  }
+
+  .benefits__headline {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 0.35rem;
+  }
+
+  .benefits__description {
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  .benefits__cta {
+    margin-top: 2rem;
+  }
+</style>

@@ -1,0 +1,68 @@
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <div class="cookie-banner__inner container">
+    <p class="cookie-banner__text">
+      Wir verwenden nur technisch notwendige Cookies.
+      <a href="/datenschutz">Datenschutzerklärung</a>
+    </p>
+    <button class="btn cookie-banner__btn" type="button" id="cookie-accept">
+      Verstanden
+    </button>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 200;
+    background: var(--color-black);
+    color: var(--color-white);
+    padding-block: 1rem;
+  }
+
+  .cookie-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .cookie-banner__text {
+    font-size: var(--text-sm);
+    max-width: 55ch;
+  }
+
+  .cookie-banner__text a {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+
+  .cookie-banner__btn {
+    flex-shrink: 0;
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+  }
+
+  .cookie-banner__btn:hover {
+    background: transparent;
+    color: var(--color-white);
+  }
+</style>
+
+<script>
+  const KEY = "schumms-cookie-consent";
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.getElementById("cookie-accept");
+
+  if (banner && !localStorage.getItem(KEY)) {
+    banner.hidden = false;
+  }
+
+  accept?.addEventListener("click", () => {
+    localStorage.setItem(KEY, "1");
+    if (banner) banner.hidden = true;
+  });
+</script>

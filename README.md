@@ -1,83 +1,108 @@
-# LP Mini Astro Template
+# schumms-landings
 
-> **Agent-optimiertes Astro-Template für hochwertige Landingpages.**  
-> Umbau aus [KMU-Mini-Astro-Template](https://github.com/Glossardi/KMU-Mini-Astro-Template) — optimiert für schnelle, skalierbare LP-Produktion durch KI-Agenten.
+Agent-gestütztes **Landing Page Template** für [Schumm & Rösch](https://www.schumms.com).
 
----
+Der Agent editiert **nur Markdown** in `src/content/pages/`. Design, Sections, Routing und DSGVO-Basis sind vorgebaut.
 
-## Status
-
-🚧 **In Umbau** — Dieses Repository wird gerade von einem KMU-Website-Template zu einem Landingpage-Template weiterentwickelt. Die technische Basis (Astro, datengetriebene Konfiguration, Theme-Presets) steht; die LP-spezifische Struktur folgt mit der Produktspezifikation.
-
-Siehe [`CONTEXT.md`](./CONTEXT.md) für Vision und offene Punkte.
-
----
-
-## Was ist dieses Template?
-
-Ein schlankes, wartbares Starter-Repo für Landingpages — gebaut für Agent-Workflows (Cursor, Copilot, etc.):
-
-- 🚀 Statischer Astro-Build — minimales JS, schnelle Ladezeiten
-- 🎨 Branding über Theme-Presets + optionale Overrides
-- 📄 Datengetrieben — Inhalte zentral konfigurierbar
-- ♿ Semantisches HTML, Accessibility-Basics
-- 🤖 Agent-friendly — klare Konventionen in `AGENTS.md`
+**Agent-Dokumentation:** [`AGENTS.md`](./AGENTS.md)
 
 ---
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/Glossardi/LP-Mini-Astro-Template.git meine-landingpage
-cd meine-landingpage
-
 pnpm install
-pnpm run dev
+pnpm run dev      # → http://localhost:4321
+pnpm run build    # → dist/
 ```
 
-Öffne `http://localhost:4321`.
+| URL | Typ | Beschreibung |
+|-----|-----|--------------|
+| `/arbeitsplatz-fitness-check/` | Lead-Magnet | Conversion-optimierte Referenz |
+| `/default-landing/` | Lead-Magnet | Alle Sections aktiv (Showcase) |
+| `/hr-konferenz-wiesbaden/` | Event | Konferenz mit Programm, Speaker, Location |
+| `/workspace-day-september/` | Event | Kompakter Event-Funnel |
+| `/` | — | Interne Seitenliste (Dev, `noindex`) |
 
 ---
 
-## Build & Deploy
+## Neue Landingpage anlegen
 
 ```bash
-pnpm run build    # Output: dist/
-pnpm run preview  # Build lokal testen
+# Lead-Magnet / E-Book / Checklist
+cp src/content/pages/_template.leadmagnet.md src/content/pages/mein-angebot.md
+
+# Event / Konferenz
+cp src/content/pages/_template.event.md src/content/pages/mein-event.md
 ```
 
-**Cloudflare Pages:** Build command `pnpm run build`, output directory `dist`.
+1. Frontmatter ausfüllen (`slug`, Inhalte, `sections:`)
+2. Bilder nach `public/pages/[slug]/` legen
+3. Nicht benötigte Sections auf `false` — **Inhalte nicht löschen**
+4. `published: true` → Build deployen
+
+**Neue Markdown-Datei während laufendem Dev-Server?** Einmal neu starten (`pnpm run dev`), sonst 404 auf dem neuen Slug.
+
+Details: [`AGENTS.md`](./AGENTS.md)
 
 ---
 
-## Projektstruktur (aktuell)
+## Architektur
 
 ```
-src/
-├── components/       # UI-Sektionen (Hero, FAQ, Contact, …)
-├── layouts/          # BaseLayout, PageLayout
-├── pages/            # index (OnePager), impressum, datenschutz, 404
-├── data/
-│   ├── site.ts       # Zentrale Inhalts- & Konfigurationsdatei
-│   ├── theme.ts      # Theme-Resolver
-│   └── themes.ts     # Theme-Presets
-└── styles/global.css
+src/content/pages/              ← Agent editiert hier
+  _template.leadmagnet.md       ← Vorlage Lead-Magnet (nicht gebaut)
+  _template.event.md            ← Vorlage Event (nicht gebaut)
+  _template.md                  ← Legacy: alle Sections (nicht gebaut)
+
+src/components/sections/        ← Section-Komponenten (fix)
+src/lib/sections.ts             ← 18-Section-Registry + Defaults
+src/content.config.ts           ← Zod-Schema (Build bricht bei Fehlern)
+src/data/brand.ts               ← Markendaten (fix)
+
+public/pages/[slug]/            ← Page-spezifische Bilder
+public/images/pool/             ← schumms.com Image Pool + manifest.json
+public/images/logos/            ← Partner-Logos
+scripts/                        ← Asset-Fetcher (optional)
 ```
+
+**Build-Regel:** `_`-Prefix in `src/content/pages/` → wird ignoriert.
+
+**Production:** Nur `published: true`. Entwürfe: lokal sichtbar, `noindex`.
 
 ---
 
-## Agent-Workflow
+## Design (schumms.com)
 
-1. **`AGENTS.md` lesen** — Konventionen und Dateistruktur
-2. **`src/data/site.ts`** als primären Konfigurationspunkt nutzen
-3. Keine unnötigen Dependencies; statisch-first bleiben
+- Schwarz/Weiß, Inter, scharfe Kanten
+- Coral `#FD7857` — Hero-CTA, Nav-CTA, Formular
+- Hero: Split-Layout · Benefits: nummerierte Kreise
+- LP-Nav: Logo links, ein CTA rechts
+- LP-Footer: Impressum + Datenschutz + Adresse
 
 ---
 
-## Herkunft
+## Deployment (Coolify)
 
-Fork/Umbau von [Glossardi/KMU-Mini-Astro-Template](https://github.com/Glossardi/KMU-Mini-Astro-Template) (KMU-Websites für lokale Dienstleister).
+| Branch | Domain |
+|--------|--------|
+| `dev` | preview-landing.schumms.com |
+| `main` | landing.schumms.com |
+
+Production-Root `/` ist interne Seitenliste (`noindex`). Live-LPs: `/{slug}/`.
+
+---
+
+## Repository als Template nutzen
+
+1. GitHub: **Use this template** → neues Repo
+2. `astro.config.mjs` → `site:` anpassen
+3. `src/data/brand.ts` → Markendaten
+4. Impressum/Datenschutz juristisch prüfen
+5. `form_webhook` in n8n anlegen
+
+---
 
 ## Lizenz
 
-MIT — siehe [LICENSE](./LICENSE).
+MIT — siehe [`LICENSE`](./LICENSE)

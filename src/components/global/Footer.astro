@@ -1,0 +1,121 @@
+---
+import brand from "@data/brand";
+
+interface Props {
+  /** Landing page mode: legal links only, no social — reduces distraction */
+  landing?: boolean;
+  minimal?: boolean;
+}
+
+const { landing = false, minimal = false } = Astro.props;
+const year = new Date().getFullYear();
+const { street, zip, city } = brand.contact.address;
+---
+
+<footer class="footer">
+  <div class="container">
+    {
+      landing ? (
+        <div class="footer__landing">
+          <nav class="footer__legal" aria-label="Rechtliches">
+            {brand.footer.legal.map((link) => (
+              <a href={link.href}>{link.label}</a>
+            ))}
+          </nav>
+          <p class="footer__copy">
+            &copy; {year} {brand.companyShort} · {street}, {zip} {city}
+          </p>
+        </div>
+      ) : (
+        <>
+          <div class="footer__grid">
+            <nav class="footer__nav" aria-label="Footer Navigation">
+              {brand.footer.nav.map((link) => (
+                <a href={link.href}>{link.label}</a>
+              ))}
+            </nav>
+
+            {
+              !minimal && (
+                <nav class="footer__legal footer__legal--center" aria-label="Rechtliches">
+                  {brand.footer.legal.map((link) => (
+                    <a href={link.href}>{link.label}</a>
+                  ))}
+                </nav>
+              )
+            }
+          </div>
+
+          <p class="footer__copy">&copy; {year} {brand.companyShort.toUpperCase()}</p>
+        </>
+      )
+    }
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding-block: 2.5rem 2rem;
+  }
+
+  .footer__landing {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer__grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .footer__nav,
+  .footer__legal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer__legal--center {
+    justify-self: end;
+    text-align: right;
+  }
+
+  .footer__nav a,
+  .footer__legal a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .footer__nav a:hover,
+  .footer__legal a:hover {
+    text-decoration: underline;
+  }
+
+  .footer__landing .footer__legal {
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .footer__copy {
+    font-size: var(--text-xs);
+    letter-spacing: 0.04em;
+    opacity: 0.65;
+    max-width: none;
+  }
+</style>

@@ -1,0 +1,30 @@
+{
+  "page": "workspace-day-september",
+  "description": "Event-Landingpage Workspace Day — Demo für Agent-Workflow",
+  "images": [
+    {
+      "file": "/pages/workspace-day-september/hero.jpg",
+      "role": "hero_image",
+      "alt": "Schumm & Rösch Event — Networking und Austausch zu Arbeitswelten",
+      "pool_equivalent": "/images/pool/hero/event-schumms-veranstaltung.jpg"
+    },
+    {
+      "file": "/pages/workspace-day-september/about.jpg",
+      "role": "about_image",
+      "alt": "Frau mit Brille und Blazer steht in modernem Arbeitsumfeld.",
+      "pool_equivalent": "/images/pool/team/68c446bebd461c0bdec13712-susanne-busshart.jpg"
+    },
+    {
+      "file": "/pages/workspace-day-september/preview.jpg",
+      "role": "content_preview_image",
+      "alt": "Interdisziplinäres Team bei Schumm & Rösch — Showroom und Event-Begleitung",
+      "pool_equivalent": "/images/pool/hero/68e6412f818c5dabccfaada5-schumms-team-1.jpg"
+    },
+    {
+      "file": "/pages/workspace-day-september/testimonial.jpg",
+      "role": "testimonial_image",
+      "alt": "Zwei Kolleginnen unterhalten sich lächelnd in einem modernen Büro.",
+      "pool_equivalent": "/images/pool/services/zwei-kolleginnen-unterhalten-sich-lachelnd-in-einem-modernen-buro.jpg"
+    }
+  ]
+}

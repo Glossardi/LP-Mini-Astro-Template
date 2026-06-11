@@ -1,0 +1,52 @@
+---
+import type { LandingPageData } from "@lib/types";
+import brand from "@data/brand";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+const heading = page.secondary_cta_heading ?? "Noch unsicher?";
+const text = page.secondary_cta_text ?? "Wir beraten dich kostenfrei — unverbindlich und ohne Verkaufsdruck.";
+const button = page.secondary_cta_button ?? "Kostenfrei beraten lassen";
+const href = page.secondary_cta_href ?? brand.footer.nav.find((l) => l.label === "Kontakt")?.href ?? `${brand.url}/kontakt`;
+---
+
+<section class="section secondary-cta" id="secondary-cta" aria-labelledby="secondary-cta-heading">
+  <div class="container secondary-cta__inner">
+    <h2 id="secondary-cta-heading">{heading}</h2>
+    <p>{text}</p>
+    <a class="btn btn--outline secondary-cta__btn" href={href}>{button}</a>
+  </div>
+</section>
+
+<style>
+  .secondary-cta {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .secondary-cta__inner {
+    max-width: 36rem;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .secondary-cta__inner h2 {
+    max-width: none;
+  }
+
+  .secondary-cta__inner p {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  .secondary-cta__btn {
+    margin-top: 2rem;
+  }
+</style>

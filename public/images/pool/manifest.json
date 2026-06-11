@@ -1,0 +1,962 @@
+{
+  "source": "https://www.schumms.com",
+  "fetched_at": "2026-06-11",
+  "usage": "Agents: Bild per Pfad in Frontmatter setzen. Alt-Text aus manifest.alt übernehmen.",
+  "images": [
+    {
+      "file": "/images/pool/brand/68e63e752c6494c8f1c086c6-partner-logo-7.svg",
+      "alt": "Partner-Logo Wilkhahn",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63e752c6494c8f1c086c6_Partner-Logo-7.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63e752c6494c8f1c086c6_Partner-Logo-7.svg",
+      "bytes": 2949,
+      "partner_name": "Wilkhahn"
+    },
+    {
+      "file": "/images/pool/brand/68e63e75587ac1f7bf568f5a-partner-logo-3.svg",
+      "alt": "Partner-Logo König + Neurath",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63e75587ac1f7bf568f5a_Partner-Logo-3.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63e75587ac1f7bf568f5a_Partner-Logo-3.svg",
+      "bytes": 3695,
+      "partner_name": "König + Neurath"
+    },
+    {
+      "file": "/images/pool/brand/68e63e756f3ef3b735626479-partner-logo-6.svg",
+      "alt": "Partner-Logo VARIO",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63e756f3ef3b735626479_Partner-Logo-6.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63e756f3ef3b735626479_Partner-Logo-6.svg",
+      "bytes": 1555,
+      "partner_name": "VARIO"
+    },
+    {
+      "file": "/images/pool/brand/68e63e7570b912e5b8d133b9-partner-logo-2.svg",
+      "alt": "Partner-Logo Vitra",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63e7570b912e5b8d133b9_Partner-Logo-2.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63e7570b912e5b8d133b9_Partner-Logo-2.svg",
+      "bytes": 1973,
+      "partner_name": "Vitra"
+    },
+    {
+      "file": "/images/pool/brand/68e63e7582a52823b447e475-partner-logo-8.svg",
+      "alt": "Partner-Logo WINI",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63e7582a52823b447e475_Partner-Logo-8.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63e7582a52823b447e475_Partner-Logo-8.svg",
+      "bytes": 753,
+      "partner_name": "WINI"
+    },
+    {
+      "file": "/images/pool/brand/68e63e75c1335224c9db6182-partner-logo-1.svg",
+      "alt": "Partner-Logo Création Baumann",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63e75c1335224c9db6182_Partner-Logo-1.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63e75c1335224c9db6182_Partner-Logo-1.svg",
+      "bytes": 3863,
+      "partner_name": "Création Baumann"
+    },
+    {
+      "file": "/images/pool/brand/68e63e75ef728d22b97e0e54-partner-logo-4.svg",
+      "alt": "Partner-Logo hushoffice",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63e75ef728d22b97e0e54_Partner-Logo-4.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63e75ef728d22b97e0e54_Partner-Logo-4.svg",
+      "bytes": 7891,
+      "partner_name": "hushoffice"
+    },
+    {
+      "file": "/images/pool/brand/68e63ea74ad4b5cafdd5edb1-partner-logo-5.svg",
+      "alt": "Partner-Logo sedus",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63ea74ad4b5cafdd5edb1_Partner-Logo-5.svg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e63ea74ad4b5cafdd5edb1_Partner-Logo-5.svg",
+      "bytes": 4963,
+      "partner_name": "sedus"
+    },
+    {
+      "file": "/images/pool/brand/68e645a08b811a665021d7bf-schumss-logo-schwarz.png",
+      "alt": "Schumm & Rösch Logo schwarz",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e645a08b811a665021d7bf_Schumss-Logo-Schwarz.png",
+      "source_page": "services",
+      "pages": [
+        "events",
+        "kontakt",
+        "lookbook",
+        "services",
+        "team"
+      ],
+      "original_filename": "68e645a08b811a665021d7bf_Schumss-Logo-Schwarz.png",
+      "bytes": 10550
+    },
+    {
+      "file": "/images/pool/brand/68e645a0ff55f4fce02a0f2d-schumss-logo.png",
+      "alt": "Schumm & Rösch Logo weiß",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e645a0ff55f4fce02a0f2d_Schumss-Logo.png",
+      "source_page": "homepage",
+      "pages": [
+        "events",
+        "homepage",
+        "kontakt",
+        "lookbook",
+        "services",
+        "team"
+      ],
+      "original_filename": "68e645a0ff55f4fce02a0f2d_Schumss-Logo.png",
+      "bytes": 10724
+    },
+    {
+      "file": "/images/pool/brand/favicon-schumm-roesch.png",
+      "alt": "Schumm & Rösch Favicon",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69188f216aaf2303432188af_Favicon-Schumm-Roesch.png",
+      "source_page": "meta",
+      "pages": [
+        "all"
+      ],
+      "original_filename": "69188f216aaf2303432188af_Favicon-Schumm-Roesch.png",
+      "bytes": 436
+    },
+    {
+      "file": "/images/pool/brand/webclip-schumm-roesch.png",
+      "alt": "Schumm & Rösch App-Icon",
+      "category": "brand",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69188f250be729368e02ed06_Webclip-Schumm-Roesch.png",
+      "source_page": "meta",
+      "pages": [
+        "all"
+      ],
+      "original_filename": "69188f250be729368e02ed06_Webclip-Schumm-Roesch.png",
+      "bytes": 4275
+    },
+    {
+      "file": "/images/pool/cases/68e630d51007343f9b4cb872-schumms-cimt-case.jpg",
+      "alt": "Moderne Büroküche mit dunklen Schränken, grüner Polsterbank und warmem Licht.",
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e630d51007343f9b4cb872_Schumms-Cimt-Case.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e630d51007343f9b4cb872_Schumms-Cimt-Case.jpg",
+      "bytes": 130542
+    },
+    {
+      "file": "/images/pool/cases/68e630d5effc8eddbaeb18bc-schumms-ts-steel-case.jpg",
+      "alt": "Helle Lounge mit Glaswänden, gemütlichen Sitzmöbeln und natürlichem Lichteinfall.",
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e630d5effc8eddbaeb18bc_Schumms-TS-Steel-Case.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e630d5effc8eddbaeb18bc_Schumms-TS-Steel-Case.jpg",
+      "bytes": 140811
+    },
+    {
+      "file": "/images/pool/cases/68e631e7aaf06d745e3709a5-schumms-riese-mueller-case.jpg",
+      "alt": "Kreativraum mit Holzverkleidung, Flipchart und gemütlicher Sitzecke.",
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e631e7aaf06d745e3709a5_Schumms-Riese-Mueller-Case.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services"
+      ],
+      "original_filename": "68e631e7aaf06d745e3709a5_Schumms-Riese-Mueller-Case.jpg",
+      "bytes": 152415
+    },
+    {
+      "file": "/images/pool/cases/68e635d74969ff0648389eaf-riese-und-mueller-1.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e635d74969ff0648389eaf_Riese-und-Mueller-1.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e635d74969ff0648389eaf_Riese-und-Mueller-1.jpg",
+      "bytes": 151239
+    },
+    {
+      "file": "/images/pool/cases/68e63acf5f7efd37bc4830d8-cimt-ag-6.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63acf5f7efd37bc4830d8_cimt-ag-6.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e63acf5f7efd37bc4830d8_cimt-ag-6.jpg",
+      "bytes": 127138
+    },
+    {
+      "file": "/images/pool/cases/68e66c27044ae830cc8c29d5-schmuss-lookbook-7.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c27044ae830cc8c29d5_Schmuss-Lookbook-7.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c27044ae830cc8c29d5_Schmuss-Lookbook-7.jpg",
+      "bytes": 145124
+    },
+    {
+      "file": "/images/pool/cases/68e66c272ebca8841a4e8e07-schmuss-lookbook-6.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c272ebca8841a4e8e07_Schmuss-Lookbook-6.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c272ebca8841a4e8e07_Schmuss-Lookbook-6.jpg",
+      "bytes": 167716
+    },
+    {
+      "file": "/images/pool/cases/68e66c2755b1f2b6c94bf233-schmuss-lookbook-5.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c2755b1f2b6c94bf233_Schmuss-Lookbook-5.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c2755b1f2b6c94bf233_Schmuss-Lookbook-5.jpg",
+      "bytes": 102656
+    },
+    {
+      "file": "/images/pool/cases/68e66c275d86cbaeca9c67ba-schmuss-lookbook-3.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c275d86cbaeca9c67ba_Schmuss-Lookbook-3.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c275d86cbaeca9c67ba_Schmuss-Lookbook-3.jpg",
+      "bytes": 94963
+    },
+    {
+      "file": "/images/pool/cases/68e66c276afbe501099ecc4b-schmuss-lookbook-9.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c276afbe501099ecc4b_Schmuss-Lookbook-9.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c276afbe501099ecc4b_Schmuss-Lookbook-9.jpg",
+      "bytes": 145149
+    },
+    {
+      "file": "/images/pool/cases/68e66c2790242b1c7154e841-schmuss-lookbook-8.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c2790242b1c7154e841_Schmuss-Lookbook-8.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c2790242b1c7154e841_Schmuss-Lookbook-8.jpg",
+      "bytes": 142680
+    },
+    {
+      "file": "/images/pool/cases/68e66c2799fc33d782eb7bec-schmuss-lookbook-11.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c2799fc33d782eb7bec_Schmuss-Lookbook-11.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c2799fc33d782eb7bec_Schmuss-Lookbook-11.jpg",
+      "bytes": 70400
+    },
+    {
+      "file": "/images/pool/cases/68e66c279efcd375b999f8dc-schmuss-lookbook-2.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c279efcd375b999f8dc_Schmuss-Lookbook-2.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c279efcd375b999f8dc_Schmuss-Lookbook-2.jpg",
+      "bytes": 98655
+    },
+    {
+      "file": "/images/pool/cases/68e66c27bbf765737cfed0eb-schmuss-lookbook-1.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c27bbf765737cfed0eb_Schmuss-Lookbook-1.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c27bbf765737cfed0eb_Schmuss-Lookbook-1.jpg",
+      "bytes": 111025
+    },
+    {
+      "file": "/images/pool/cases/68e66c27fb254d3a7bcdb68c-schmuss-lookbook-4.jpg",
+      "alt": null,
+      "category": "cases",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66c27fb254d3a7bcdb68c_Schmuss-Lookbook-4.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e66c27fb254d3a7bcdb68c_Schmuss-Lookbook-4.jpg",
+      "bytes": 183452
+    },
+    {
+      "file": "/images/pool/content/68e63bfcbcd4ac95929e7f9d-schumms-e-book.jpg",
+      "alt": "E-Book Cover Future Work — Schumm & Rösch.",
+      "category": "content",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63bfcbcd4ac95929e7f9d_Schumms-E-Book.jpg",
+      "source_page": "services",
+      "pages": [
+        "services"
+      ],
+      "original_filename": "68e63bfcbcd4ac95929e7f9d_Schumms-E-Book.jpg",
+      "bytes": 143507
+    },
+    {
+      "file": "/images/pool/events/68e661fcd1e5f7e978412920-schumms-tiktok-1-poster-00001.jpg",
+      "alt": null,
+      "category": "events",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e661fcd1e5f7e978412920_Schumms-TikTok-1-poster-00001.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "team"
+      ],
+      "original_filename": "68e661fcd1e5f7e978412920_Schumms-TikTok-1-poster-00001.jpg",
+      "bytes": 26412
+    },
+    {
+      "file": "/images/pool/events/68e662525ead11a26ff3d701-schumms-tiktok-2-poster-00001.jpg",
+      "alt": null,
+      "category": "events",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e662525ead11a26ff3d701_Schumms-TikTok-2-poster-00001.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "team"
+      ],
+      "original_filename": "68e662525ead11a26ff3d701_Schumms-TikTok-2-poster-00001.jpg",
+      "bytes": 30236
+    },
+    {
+      "file": "/images/pool/events/68e66277efcea9d9e030c890-schumms-tiktok-3-poster-00001.jpg",
+      "alt": null,
+      "category": "events",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66277efcea9d9e030c890_Schumms-TikTok-3-poster-00001.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "team"
+      ],
+      "original_filename": "68e66277efcea9d9e030c890_Schumms-TikTok-3-poster-00001.jpg",
+      "bytes": 28007
+    },
+    {
+      "file": "/images/pool/events/68e66281557c2a08bea9b086-schumms-tiktok-4-poster-00001.jpg",
+      "alt": null,
+      "category": "events",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e66281557c2a08bea9b086_Schumms-TikTok-4-poster-00001.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "team"
+      ],
+      "original_filename": "68e66281557c2a08bea9b086_Schumms-TikTok-4-poster-00001.jpg",
+      "bytes": 38379
+    },
+    {
+      "file": "/images/pool/events/6a02f515daa8158c4d9344f7-16-9-website.jpg",
+      "alt": null,
+      "category": "events",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6a02f515daa8158c4d9344f7_16-9_Website.jpg",
+      "source_page": "events",
+      "pages": [
+        "events"
+      ],
+      "original_filename": "6a02f515daa8158c4d9344f7_16-9_Website.jpg",
+      "bytes": 740260
+    },
+    {
+      "file": "/images/pool/hero/68e63fab58fdfe2e3ca0c186-schumms-services-1.jpg",
+      "alt": "Modernes Büro mit offenen Arbeitsbereichen und natürlichem Licht.",
+      "category": "hero",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e63fab58fdfe2e3ca0c186_Schumms-Services-1.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage"
+      ],
+      "original_filename": "68e63fab58fdfe2e3ca0c186_Schumms-Services-1.jpg",
+      "bytes": 116364
+    },
+    {
+      "file": "/images/pool/hero/68e6412f818c5dabccfaada5-schumms-team-1.jpg",
+      "alt": "Interdisziplinäres Team bei der Büroplanung — Schumm & Rösch.",
+      "category": "hero",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e6412f818c5dabccfaada5_Schumms-Team-1.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage"
+      ],
+      "original_filename": "68e6412f818c5dabccfaada5_Schumms-Team-1.jpg",
+      "bytes": 161890
+    },
+    {
+      "file": "/images/pool/hero/event-schumms-veranstaltung.jpg",
+      "alt": "Schumm & Rösch Event — Networking und Austausch zu Arbeitswelten",
+      "category": "hero",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/690900f0cbbefe8e90c1357c_Event-Schumms.jpg",
+      "source_page": "events",
+      "pages": [
+        "events"
+      ],
+      "original_filename": "690900f0cbbefe8e90c1357c_Event-Schumms.jpg",
+      "bytes": 61558,
+      "recommended_for": [
+        "hero_image",
+        "event"
+      ]
+    },
+    {
+      "file": "/images/pool/hero/home-schumms-hero-buero-zukunft.jpg",
+      "alt": "Modernes Büro mit natürlichem Licht und flexiblen Arbeitsbereichen",
+      "category": "hero",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/690900f0c7aae84cad38945c_Home-Schumms.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "kontakt"
+      ],
+      "original_filename": "690900f0c7aae84cad38945c_Home-Schumms.jpg",
+      "bytes": 96118,
+      "recommended_for": [
+        "hero_image"
+      ]
+    },
+    {
+      "file": "/images/pool/misc/68c446be0cb145fcda1cd82c-stefanie-dreher.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446be0cb145fcda1cd82c_Stefanie-Dreher.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446be0cb145fcda1cd82c_Stefanie-Dreher.jpg",
+      "bytes": 108328
+    },
+    {
+      "file": "/images/pool/misc/68c446be97794c03df0f06ef-gonca-bolatcan.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446be97794c03df0f06ef_Gonca-Bolatcan.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446be97794c03df0f06ef_Gonca-Bolatcan.jpg",
+      "bytes": 86188
+    },
+    {
+      "file": "/images/pool/misc/68c446becce95f26df6da103-spempe.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446becce95f26df6da103_spempe.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446becce95f26df6da103_spempe.jpg",
+      "bytes": 79635
+    },
+    {
+      "file": "/images/pool/misc/68c446bed63e73f51a007816-leonard-jelifanow.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bed63e73f51a007816_Leonard-Jelifanow.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bed63e73f51a007816_Leonard-Jelifanow.jpg",
+      "bytes": 47752
+    },
+    {
+      "file": "/images/pool/misc/68c446beeef7632d40a2e9e1-sanela-solak.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446beeef7632d40a2e9e1_Sanela-Solak.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446beeef7632d40a2e9e1_Sanela-Solak.jpg",
+      "bytes": 74451
+    },
+    {
+      "file": "/images/pool/misc/68c446bef1870e37362a0bf7-sarah-boettger.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bef1870e37362a0bf7_Sarah-Boettger.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bef1870e37362a0bf7_Sarah-Boettger.jpg",
+      "bytes": 105614
+    },
+    {
+      "file": "/images/pool/misc/68e65892e31d91211993d8c8-desislava.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e65892e31d91211993d8c8_Desislava.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68e65892e31d91211993d8c8_Desislava.jpg",
+      "bytes": 122460
+    },
+    {
+      "file": "/images/pool/misc/68e658f1ad5af40d7d0cac86-pascal-klein.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e658f1ad5af40d7d0cac86_Pascal-klein.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68e658f1ad5af40d7d0cac86_Pascal-klein.jpg",
+      "bytes": 74644
+    },
+    {
+      "file": "/images/pool/misc/68e65944e87bcd79d5083d6b-kevin.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e65944e87bcd79d5083d6b_Kevin.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68e65944e87bcd79d5083d6b_Kevin.jpg",
+      "bytes": 102078
+    },
+    {
+      "file": "/images/pool/misc/68e65945ddde66b41e45c5ef-luca.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e65945ddde66b41e45c5ef_Luca.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68e65945ddde66b41e45c5ef_Luca.jpg",
+      "bytes": 108230
+    },
+    {
+      "file": "/images/pool/misc/6945883a00887668926117a6-platzhalter.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6945883a00887668926117a6_Platzhalter.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "6945883a00887668926117a6_Platzhalter.jpg",
+      "bytes": 6788
+    },
+    {
+      "file": "/images/pool/misc/6984aaf8da2f98e5e044db08-00-leerbild.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6984aaf8da2f98e5e044db08_00_Leerbild.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "6984aaf8da2f98e5e044db08_00_Leerbild.jpg",
+      "bytes": 6792
+    },
+    {
+      "file": "/images/pool/misc/69a70b132ddc5146b602b289-marco-hartmann2-web-reduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69a70b132ddc5146b602b289_Marco_Hartmann2_web-reduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69a70b132ddc5146b602b289_Marco_Hartmann2_web-reduziert.jpg",
+      "bytes": 190593
+    },
+    {
+      "file": "/images/pool/misc/69a70ca8a740e17a7ced424b-anna-thimm-web-reduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69a70ca8a740e17a7ced424b_Anna_Thimm_web-reduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69a70ca8a740e17a7ced424b_Anna_Thimm_web-reduziert.jpg",
+      "bytes": 242694
+    },
+    {
+      "file": "/images/pool/misc/69a7105cae749707c8bc66de-julia-brand-web-reduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69a7105cae749707c8bc66de_Julia_Brand_web-reduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69a7105cae749707c8bc66de_Julia_Brand_web-reduziert.jpg",
+      "bytes": 209513
+    },
+    {
+      "file": "/images/pool/misc/69a97635d509d8fe3484e1e8-rica-ruettler-webreduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69a97635d509d8fe3484e1e8_Rica_Ruettler-webreduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69a97635d509d8fe3484e1e8_Rica_Ruettler-webreduziert.jpg",
+      "bytes": 231271
+    },
+    {
+      "file": "/images/pool/misc/69b987a8b8d81916168a6a6d-katrina-tober-webrediziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69b987a8b8d81916168a6a6d_Katrina-Tober-webrediziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69b987a8b8d81916168a6a6d_Katrina-Tober-webrediziert.jpg",
+      "bytes": 261738
+    },
+    {
+      "file": "/images/pool/misc/69bbd58a94158e8af99fe7ca-luzie-hoefling-1-1-webreduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69bbd58a94158e8af99fe7ca_Luzie_Hoefling_1-1_webreduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69bbd58a94158e8af99fe7ca_Luzie_Hoefling_1-1_webreduziert.jpg",
+      "bytes": 181515
+    },
+    {
+      "file": "/images/pool/misc/69bd754552d46b97290cf382-tin-munzberg-2-webreduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69bd754552d46b97290cf382_Tin_Munzberg-2_Webreduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69bd754552d46b97290cf382_Tin_Munzberg-2_Webreduziert.jpg",
+      "bytes": 257843
+    },
+    {
+      "file": "/images/pool/misc/69ce37d3e92bccafdeb9975c-img-2704.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69ce37d3e92bccafdeb9975c_IMG_2704.JPG",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69ce37d3e92bccafdeb9975c_IMG_2704.JPG",
+      "bytes": 73833
+    },
+    {
+      "file": "/images/pool/misc/6a2292ba26bfac379a938046-thomas-kuk-1-1-web-reduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6a2292ba26bfac379a938046_Thomas_Kuk_1-1_web-reduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "6a2292ba26bfac379a938046_Thomas_Kuk_1-1_web-reduziert.jpg",
+      "bytes": 267681
+    },
+    {
+      "file": "/images/pool/misc/6a22aa30b797ac116753ad09-tibor-horvath-1-1-web-reduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6a22aa30b797ac116753ad09_Tibor_Horvath_1-1_web-reduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "6a22aa30b797ac116753ad09_Tibor_Horvath_1-1_web-reduziert.jpg",
+      "bytes": 178733
+    },
+    {
+      "file": "/images/pool/misc/6a294be1ebf2c564001a8d5a-tobias-kahl-1-1-webreduziert.jpg",
+      "alt": null,
+      "category": "misc",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6a294be1ebf2c564001a8d5a_Tobias_Kahl_1-1_webreduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "6a294be1ebf2c564001a8d5a_Tobias_Kahl_1-1_webreduziert.jpg",
+      "bytes": 148634
+    },
+    {
+      "file": "/images/pool/services/6a070df4f586b269309ee10b-1.jpg",
+      "alt": null,
+      "category": "services",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6a070df4f586b269309ee10b_1.jpg",
+      "source_page": "services",
+      "pages": [
+        "services"
+      ],
+      "original_filename": "6a070df4f586b269309ee10b_1.jpg",
+      "bytes": 374247
+    },
+    {
+      "file": "/images/pool/services/zwei-kolleginnen-unterhalten-sich-lachelnd-in-einem-modernen-buro.jpg",
+      "alt": "Zwei Kolleginnen unterhalten sich lächelnd in einem modernen Büro.",
+      "category": "services",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/6908f8af3a1643ae15e3c0bc_Schumms-Services-3.jpg",
+      "source_page": "services",
+      "pages": [
+        "services"
+      ],
+      "original_filename": "6908f8af3a1643ae15e3c0bc_Schumms-Services-3.jpg",
+      "bytes": 166122
+    },
+    {
+      "file": "/images/pool/team/68c446bd17fbfe8e5ef1c489-dirk-salzmann.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bd17fbfe8e5ef1c489_Dirk-Salzmann.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bd17fbfe8e5ef1c489_Dirk-Salzmann.jpg",
+      "bytes": 72313
+    },
+    {
+      "file": "/images/pool/team/68c446bd5941a4c84bbdfb73-annina-kramp.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bd5941a4c84bbdfb73_Annina-Kramp.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bd5941a4c84bbdfb73_Annina-Kramp.jpg",
+      "bytes": 73209
+    },
+    {
+      "file": "/images/pool/team/68c446bd70ceff8cedd730ec-claudia-kadow.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bd70ceff8cedd730ec_Claudia-Kadow.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bd70ceff8cedd730ec_Claudia-Kadow.jpg",
+      "bytes": 71514
+    },
+    {
+      "file": "/images/pool/team/68c446bda1705fd564e5bb95-eveline-root.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bda1705fd564e5bb95_Eveline-Root.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bda1705fd564e5bb95_Eveline-Root.jpg",
+      "bytes": 51029
+    },
+    {
+      "file": "/images/pool/team/68c446bda3ebd32659b5db12-alireza-salari.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bda3ebd32659b5db12_Alireza-Salari.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bda3ebd32659b5db12_Alireza-Salari.jpg",
+      "bytes": 80119
+    },
+    {
+      "file": "/images/pool/team/68c446bdbb02a969bb6ab889-giovanni-bruno.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bdbb02a969bb6ab889_Giovanni-Bruno.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bdbb02a969bb6ab889_Giovanni-Bruno.jpg",
+      "bytes": 98983
+    },
+    {
+      "file": "/images/pool/team/68c446bdc429661b093e0d06-brittney-atterberry.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bdc429661b093e0d06_Brittney-Atterberry.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bdc429661b093e0d06_Brittney-Atterberry.jpg",
+      "bytes": 94776
+    },
+    {
+      "file": "/images/pool/team/68c446bdc8b232236d16b1cc-christine-blos.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bdc8b232236d16b1cc_Christine-Blos.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bdc8b232236d16b1cc_Christine-Blos.jpg",
+      "bytes": 92400
+    },
+    {
+      "file": "/images/pool/team/68c446bdeef7632d40a2e9c9-frschemm-0465.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bdeef7632d40a2e9c9_FrSchemm_0465.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68c446bdeef7632d40a2e9c9_FrSchemm_0465.jpg",
+      "bytes": 87600
+    },
+    {
+      "file": "/images/pool/team/68c446bebd461c0bdec13712-susanne-busshart.jpg",
+      "alt": "Frau mit Brille und Blazer steht in modernem Arbeitsumfeld.",
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68c446bebd461c0bdec13712_Susanne-Busshart.jpg",
+      "source_page": "homepage",
+      "pages": [
+        "homepage",
+        "services",
+        "team"
+      ],
+      "original_filename": "68c446bebd461c0bdec13712_Susanne-Busshart.jpg",
+      "bytes": 62020
+    },
+    {
+      "file": "/images/pool/team/68e6367048051249a1ab3d5d-annina.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e6367048051249a1ab3d5d_Annina.jpg",
+      "source_page": "lookbook",
+      "pages": [
+        "lookbook"
+      ],
+      "original_filename": "68e6367048051249a1ab3d5d_Annina.jpg",
+      "bytes": 89376
+    },
+    {
+      "file": "/images/pool/team/68e640879194b09a87717176-sophie-schreiner.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e640879194b09a87717176_Sophie_Schreiner.jpg",
+      "source_page": "events",
+      "pages": [
+        "events",
+        "kontakt"
+      ],
+      "original_filename": "68e640879194b09a87717176_Sophie_Schreiner.jpg",
+      "bytes": 130341
+    },
+    {
+      "file": "/images/pool/team/68e65831cba38686d69162d9-sophie-schreiner-klein.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/68e65831cba38686d69162d9_Sophie_Schreiner-klein.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "68e65831cba38686d69162d9_Sophie_Schreiner-klein.jpg",
+      "bytes": 86926
+    },
+    {
+      "file": "/images/pool/team/69ef5973d5c59222e72d8418-giovanni-sude-1-1-web-reduziert.jpg",
+      "alt": null,
+      "category": "team",
+      "source_url": "https://cdn.prod.website-files.com/68c2c99d8f9665630c14287f/69ef5973d5c59222e72d8418_Giovanni_Sude_1-1_web-reduziert.jpg",
+      "source_page": "team",
+      "pages": [
+        "team"
+      ],
+      "original_filename": "69ef5973d5c59222e72d8418_Giovanni_Sude_1-1_web-reduziert.jpg",
+      "bytes": 260698
+    }
+  ]
+}

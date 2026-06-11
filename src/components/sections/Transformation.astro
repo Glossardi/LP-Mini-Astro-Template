@@ -1,0 +1,71 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.transformation_before && !page.transformation_after) {
+  return null;
+}
+---
+
+<section class="section transformation" id="transformation" aria-labelledby="transformation-heading">
+  <div class="container split">
+    {
+      page.transformation_before && (
+        <div class="transformation__block transformation__block--before">
+          <p class="transformation__label">Heute</p>
+          {page.transformation_heading && <h2 id="transformation-heading">{page.transformation_heading}</h2>}
+          <p class="transformation__text">{page.transformation_before}</p>
+        </div>
+      )
+    }
+    {
+      page.transformation_after && (
+        <div class="transformation__block transformation__block--after">
+          <p class="transformation__label">Danach</p>
+          {!page.transformation_before && page.transformation_heading && (
+            <h2 id="transformation-heading">{page.transformation_heading}</h2>
+          )}
+          <p class="transformation__text">{page.transformation_after}</p>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .transformation__label {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .transformation__block--after {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: clamp(2rem, 5vw, 3rem);
+  }
+
+  .transformation__block--after h2,
+  .transformation__block--after p {
+    color: var(--color-white);
+  }
+
+  .transformation__text {
+    margin-top: 1rem;
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    max-width: none;
+  }
+
+  .transformation__block:not(.transformation__block--after) .transformation__text {
+    color: var(--color-text-muted);
+  }
+</style>

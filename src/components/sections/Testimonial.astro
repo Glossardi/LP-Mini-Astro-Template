@@ -1,0 +1,120 @@
+---
+import type { LandingPageData } from "@lib/types";
+
+interface Props {
+  page: LandingPageData;
+}
+
+const { page } = Astro.props;
+
+if (!page.testimonial_quote) {
+  return null;
+}
+
+const roleLine = [page.testimonial_role, page.testimonial_company].filter(Boolean).join(" · ");
+---
+
+<section class="section testimonial" id="testimonial" aria-labelledby="testimonial-heading">
+  <div class="container">
+    {page.testimonial_heading && <h2 id="testimonial-heading">{page.testimonial_heading}</h2>}
+
+    <figure class="testimonial__card">
+      {
+        page.testimonial_image && (
+          <img
+            class="testimonial__photo"
+            src={page.testimonial_image}
+            alt={page.testimonial_author ?? "Kundin"}
+            loading="lazy"
+          />
+        )
+      }
+
+      <blockquote class="testimonial__quote">
+        <p>&ldquo;{page.testimonial_quote}&rdquo;</p>
+        <figcaption>
+          {page.testimonial_author && <strong>{page.testimonial_author}</strong>}
+          {roleLine && <span>{roleLine}</span>}
+        </figcaption>
+      </blockquote>
+
+      {
+        page.testimonial_video_url && (
+          <a class="testimonial__video" href={page.testimonial_video_url} target="_blank" rel="noopener noreferrer">
+            Video ansehen →
+          </a>
+        )
+      }
+
+      <a class="btn btn--coral testimonial__cta" href="#lead-form">{page.cta_text}</a>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .testimonial h2 {
+    margin-bottom: 2.5rem;
+    max-width: 16ch;
+  }
+
+  .testimonial__card {
+    display: grid;
+    gap: 2rem;
+    border-top: 1px solid var(--color-line);
+    padding-top: 2rem;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial__card {
+      grid-template-columns: auto 1fr;
+      align-items: start;
+    }
+  }
+
+  .testimonial__photo {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .testimonial__quote {
+    margin: 0;
+  }
+
+  .testimonial__quote p {
+    font-size: var(--text-xl);
+    line-height: 1.45;
+    max-width: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .testimonial__quote figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: var(--text-sm);
+  }
+
+  .testimonial__quote figcaption span {
+    color: var(--color-text-muted);
+  }
+
+  .testimonial__video {
+    grid-column: 1 / -1;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-black);
+    padding-bottom: 0.2rem;
+    width: fit-content;
+  }
+
+  .testimonial__cta {
+    grid-column: 1 / -1;
+    width: fit-content;
+  }
+</style>
