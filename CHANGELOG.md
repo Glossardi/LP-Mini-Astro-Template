@@ -6,7 +6,22 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ---
 
-## [1.0.0] — 2024-01
+## [0.1.0] — 2026-06-11
+
+### Hinzugefügt
+
+- Neues Repository `LP-Mini-Astro-Template` als Umbau-Basis aus KMU-Mini-Astro-Template
+- `CONTEXT.md` für Produktspezifikation und Umbau-Roadmap
+- README und Metadaten auf Landingpage-Fokus ausgerichtet
+
+### Hinweis
+
+Technische Basis (Astro 6, Theme-Presets, OnePager-Struktur) entspricht noch dem KMU-Template.
+LP-spezifischer Umbau folgt.
+
+---
+
+## [1.0.0] — 2024-01 (KMU-Mini-Astro-Template)
 
 ### Hinzugefügt
 

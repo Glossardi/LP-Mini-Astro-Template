@@ -1,11 +1,13 @@
 /**
  * site.ts — Zentrale Konfiguration für das gesamte Projekt
  *
- * Dies ist die EINZIGE Datei, die pro Kundenprojekt angepasst wird.
+ * Dies ist die EINZIGE Datei, die pro Landingpage-Projekt angepasst wird.
  * Alle Inhalte, Texte und Einstellungen fließen automatisch in die
  * Komponenten ein.
  *
- * Workflow: Repository forken → diese Datei anpassen → deployen.
+ * Workflow: Repository klonen → diese Datei anpassen → deployen.
+ *
+ * Hinweis: Demo-Inhalte stammen noch vom KMU-Template und werden im LP-Umbau ersetzt.
  */
 
 import type { ThemePreset } from "./themes";

@@ -7,8 +7,10 @@ die an diesem Repository arbeiten. Bitte zuerst lesen.
 
 ## Was ist dieses Projekt?
 
-Ein statisches **OnePager-Template** für lokale Dienstleister (Handwerk, Praxen, Gewerbe).
-Optimiert für den Freelancer-Workflow: Repository forken, `site.ts` anpassen, deployen.
+Ein statisches **Landingpage-Template** (Umbau aus KMU-Mini-Astro-Template).
+Optimiert für Agent-Workflows: Repository klonen/forken, zentrale Konfiguration anpassen, deployen.
+
+> **Status:** In Umbau auf LP-Use-Case. Produktspezifikation in `CONTEXT.md`. Konventionen unten gelten für die technische Basis.
 
 - **Framework:** Astro (statischer Output, kein Server-Rendering)
 - **Styling:** Globale CSS Custom Properties + Theme-Presets (kein Tailwind, kein CSS-in-JS)
